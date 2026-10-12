@@ -1,0 +1,120 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Página-1" id="V7rsGiWldi49HBIi7w9w">
+    <mxGraphModel dx="1110" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="LI18i0w3RItpIS3-KLMM-1" parent="1" style="swimlane;startSize=20;horizontal=1;containerType=tree;transparentBounds=1;groupPadding=20 50 20 20;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="Fluxo Atual" vertex="1">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-2" edge="1" parent="LI18i0w3RItpIS3-KLMM-1" source="LI18i0w3RItpIS3-KLMM-4" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;" target="LI18i0w3RItpIS3-KLMM-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;p&gt;Agendamento diário&lt;/p&gt;" treeRoot="1" id="LI18i0w3RItpIS3-KLMM-4">
+          <mxCell parent="LI18i0w3RItpIS3-KLMM-1" style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1">
+            <mxGeometry height="60" width="120" x="300" y="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-40" edge="1" parent="LI18i0w3RItpIS3-KLMM-1" source="LI18i0w3RItpIS3-KLMM-5" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=open;exitX=0.75;exitY=1;exitDx=0;exitDy=0;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="255.28915662650604" y="220.26506024096386" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-46" edge="1" parent="LI18i0w3RItpIS3-KLMM-1" source="LI18i0w3RItpIS3-KLMM-5" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="LI18i0w3RItpIS3-KLMM-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-47" edge="1" parent="LI18i0w3RItpIS3-KLMM-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;exitX=0.75;exitY=1;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <Array as="points">
+              <mxPoint x="525" y="230" />
+              <mxPoint x="525" y="230" />
+            </Array>
+            <mxPoint x="260" y="220" as="sourcePoint" />
+            <mxPoint x="260.2" y="220.2" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-5" parent="LI18i0w3RItpIS3-KLMM-1" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="&lt;p&gt;API DataSys&lt;/p&gt;" vertex="1">
+          <mxGeometry height="60" width="100" x="180" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-7" edge="1" parent="LI18i0w3RItpIS3-KLMM-1" source="LI18i0w3RItpIS3-KLMM-5" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;" target="LI18i0w3RItpIS3-KLMM-8" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="120" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-8" parent="LI18i0w3RItpIS3-KLMM-1" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=light-dark(#E51400,#CC0000);fontColor=#ffffff;strokeColor=#B20000;gradientColor=none;" value="Processamento da resposta" vertex="1">
+          <mxGeometry height="60" width="100" x="320" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-23" edge="1" parent="LI18i0w3RItpIS3-KLMM-1" source="LI18i0w3RItpIS3-KLMM-8" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;" target="LI18i0w3RItpIS3-KLMM-24" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="220" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-24" parent="LI18i0w3RItpIS3-KLMM-1" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=light-dark(#E51400,#CC0000);fontColor=#ffffff;strokeColor=#B20000;" value="Base de dados local" vertex="1">
+          <mxGeometry height="60" width="100" x="200" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-29" parent="LI18i0w3RItpIS3-KLMM-1" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" value="&lt;p&gt;Loja A&lt;br&gt;Caixa Fechado&lt;/p&gt;" vertex="1">
+          <mxGeometry height="60" width="100" x="315" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-48" edge="1" parent="LI18i0w3RItpIS3-KLMM-1" source="LI18i0w3RItpIS3-KLMM-31" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;exitX=0.75;exitY=1;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="525" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-31" parent="LI18i0w3RItpIS3-KLMM-1" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=light-dark(#008A00,#FF0000);fontColor=#ffffff;strokeColor=#005700;" value="&lt;p&gt;Loja B&lt;br&gt;Caixa Aberto&lt;/p&gt;" vertex="1">
+          <mxGeometry height="60" width="100" x="450" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-9" parent="1" style="swimlane;startSize=20;horizontal=1;containerType=tree;transparentBounds=1;groupPadding=20 30 50 20;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="Fluxo Correto" vertex="1">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-10" edge="1" parent="LI18i0w3RItpIS3-KLMM-9" source="LI18i0w3RItpIS3-KLMM-12" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;" target="LI18i0w3RItpIS3-KLMM-13" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;p&gt;Agendamento diário&lt;/p&gt;" treeRoot="1" id="LI18i0w3RItpIS3-KLMM-12">
+          <mxCell parent="LI18i0w3RItpIS3-KLMM-9" style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1">
+            <mxGeometry height="60" width="120" x="314" y="550" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-56" edge="1" parent="LI18i0w3RItpIS3-KLMM-9" source="LI18i0w3RItpIS3-KLMM-13" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="LI18i0w3RItpIS3-KLMM-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-57" edge="1" parent="LI18i0w3RItpIS3-KLMM-9" source="LI18i0w3RItpIS3-KLMM-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;exitX=0.75;exitY=1;exitDx=0;exitDy=0;libavoidRouting=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="LI18i0w3RItpIS3-KLMM-55">
+          <mxGeometry relative="1" x="-0.9394" as="geometry">
+            <Array as="points">
+              <mxPoint x="255" y="760" />
+              <mxPoint x="555" y="760" />
+            </Array>
+            <mxPoint x="255.28915662650604" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-13" parent="LI18i0w3RItpIS3-KLMM-9" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="&lt;p&gt;API DataSys&lt;/p&gt;" vertex="1">
+          <mxGeometry height="60" width="100" x="180" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-15" edge="1" parent="LI18i0w3RItpIS3-KLMM-9" source="LI18i0w3RItpIS3-KLMM-13" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;" target="LI18i0w3RItpIS3-KLMM-16" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="610" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-16" parent="LI18i0w3RItpIS3-KLMM-9" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="Validação + Upsert (Node.js)" vertex="1">
+          <mxGeometry height="60" width="100" x="334" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-25" edge="1" parent="LI18i0w3RItpIS3-KLMM-9" source="LI18i0w3RItpIS3-KLMM-16" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;" target="LI18i0w3RItpIS3-KLMM-26" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="710" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-26" parent="LI18i0w3RItpIS3-KLMM-9" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="Base de dados local" vertex="1">
+          <mxGeometry height="60" width="100" x="190" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-53" parent="LI18i0w3RItpIS3-KLMM-9" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=light-dark(#60A917,#43BA43);fontColor=#ffffff;strokeColor=#2D7600;" value="&lt;p&gt;Loja A&lt;br&gt;Caixa Fechado&lt;/p&gt;" vertex="1">
+          <mxGeometry height="60" width="100" x="325" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-55" parent="LI18i0w3RItpIS3-KLMM-9" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=light-dark(#1BA1E2,#FF3333);fontColor=#ffffff;strokeColor=#006EAF;" value="&lt;p&gt;Loja B&lt;br&gt;Caixa Aberto&lt;/p&gt;" vertex="1">
+          <mxGeometry height="60" width="100" x="480" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="LI18i0w3RItpIS3-KLMM-58" edge="1" parent="LI18i0w3RItpIS3-KLMM-9" source="LI18i0w3RItpIS3-KLMM-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;innerLoopWaypoints=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="LI18i0w3RItpIS3-KLMM-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
