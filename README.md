@@ -8,6 +8,36 @@ Uma rotina consulta diariamente o método `BaixarVendas` da API DataSys e atuali
 
 Se uma loja não fechar o caixa dentro do prazo, a consulta daquele dia pode não trazer vendas. Quando a rotina interpreta essa resposta como uma lista completa e substitui ou apaga os dados locais, registros válidos podem ser perdidos.
 
+## Contrato DataSys conforme o manual recebido
+
+O projeto usa como referência o documento **Integração via Webservices - DataSys v12.0**:
+
+- **WSDL/serviço:** `https://wsintegracaoclientes.datasys.online/clientes/ConsultasDatasys.asmx` (o exemplo Node usa `?WSDL` para obter a descrição do serviço SOAP).
+- **Método:** `BaixarVendas`.
+- **Autenticação:** parâmetro obrigatório `Token`, solicitado à CSJ Sistemas.
+- **Parâmetros obrigatórios:** `DataInicial` e `DataFinal`, no formato `aaaa-mm-dd`.
+- **Limites do método:** conforme a página 8, `DataInicial` deve ser no máximo o dia anterior à consulta e o período solicitado não pode ultrapassar 15 dias.
+- **Formato de retorno:** resposta SOAP em `BaixarVendasResult > NewDataSet > Table`; a tabela contém registros de venda.
+- **Campos de retorno usados neste exemplo:** `id` (ID do pedido), `Numero_x0020_Pedido`, `Filial`, `Data_x0020_pedido`, `Tipo_x0020_Pedido`, `Total_x0020_Item` e `CPF_x0020_Vendedor`.
+
+O mapeamento persistido pelo exemplo é:
+
+| Campo XML do DataSys | Campo no MongoDB | Descrição do manual |
+|---|---|---|
+| `id` | `id_venda` | ID do pedido de venda |
+| `Numero_x0020_Pedido` | `numero_pedido` | Número do pedido |
+| `Filial` | `filial` | Nome fantasia da filial |
+| `Data_x0020_pedido` | `data_pedido` | Data do pedido |
+| `Tipo_x0020_Pedido` | `tipo_pedido` | Devolução ou venda |
+| `Total_x0020_Item` | `total_item` | Valor total do item |
+| `CPF_x0020_Vendedor` | `cpf_vendedor` | CPF do vendedor |
+
+O documento informa que `BaixarVendas` retorna vendas registradas que constam em **caixa fechado**. Isso explica por que a resposta pode não representar vendas de caixas que ainda não foram fechados. A proteção para resposta vazia decorre também do cenário do case; o manual não documenta uma distinção explícita entre “caixa aberto” e “caixa fechado sem vendas”.
+
+Os nomes XML codificados com `_x0020_` correspondem a espaços no nome original. O cliente SOAP pode retornar `Table` como um único objeto quando há uma venda ou como uma lista quando há várias; `src/Upsert.js` normaliza os dois casos. Apesar de o manual descrever `id` como ID do pedido de venda, confirme sua unicidade/estabilidade na integração real antes de criar um índice único no MongoDB.
+
+O retorno do manual contém outros campos, inclusive dados pessoais e de clientes. O exemplo persiste somente os campos necessários para demonstrar a sincronização; evite armazenar informações adicionais sem necessidade e autorização.
+
 ## Problema e causa raiz
 
 O erro central é tratar **ausência de dados na resposta** como **confirmação de que não existem vendas**.
@@ -127,7 +157,7 @@ Uma restrição única para loja e data evita a criação de vários controles p
 4. **Venda repetida:** atualizar o registro existente, sem duplicá-lo.
 5. **Falha durante a gravação:** reverter a transação e não marcar o período como sincronizado.
 6. **Fechamento tardio:** uma reconciliação posterior deve buscar e gravar as vendas.
-7. **Resposta incompleta ou paginação interrompida:** não finalizar o período nem remover dados locais.
+7. **Resposta incompleta:** não finalizar o período nem remover dados locais. O manual recebido não especifica paginação.
 8. **Duas tentativas concorrentes:** impedir que processamento simultâneo crie duplicidades ou estados inconsistentes.
 
 ## Benefícios esperados
@@ -144,7 +174,7 @@ Antes da implementação, confirmar:
 
 - Como a API informa que o caixa de uma loja foi fechado.
 - Se existe uma resposta distinta para “caixa fechado sem vendas”.
-- Se a consulta é paginada e como confirmar que todas as páginas foram lidas.
+- Se podem ocorrer respostas limitadas/incompletas ou paginação; esse comportamento não está especificado no manual recebido.
 - Qual identificador é estável e único para cada venda.
 - Se vendas já sincronizadas podem ser alteradas ou canceladas posteriormente.
 - Qual é o prazo operacional típico para o fechamento tardio dos caixas.
@@ -163,6 +193,43 @@ Essas informações definem quando um período pode ser considerado completo e q
 
 > Uma resposta vazia não deve apagar dados. Primeiro é preciso saber se a origem confirmou que o caixa foi fechado e que a resposta está completa.
 
-## Escopo deste repositório
+## Exemplos de código do projeto
 
-Este repositório documenta o problema e a estratégia proposta para o case. O fluxo acima é pseudocódigo: a implementação concreta depende do contrato da API DataSys, da tecnologia utilizada pela aplicação e do modelo atual do banco de dados.
+O arquivo [src/Atual.js](./src/Atual.js) usa o mesmo contrato SOAP e mapeamento de campos do exemplo corrigido, mas reproduz o erro: apaga primeiro os documentos do período no MongoDB e só depois consulta o DataSys; se a resposta vier vazia ou a chamada falhar, os dados apagados não são restaurados. Em seguida, tenta gravar com `insertOne`, sem upsert.
+
+**Cuidado:** este script é destrutivo de propósito. Por segurança, usa o banco `facell_vendas_db_demo` por padrão e recusa a execução sem uma confirmação explícita no `.env`. Nunca aponte a demonstração para o banco real. Para demonstrar a exclusão, prepare documentos de teste na coleção `vendas` do banco de demonstração e configure as variáveis do exemplo:
+
+```dotenv
+DATASYS_TOKEN=seu-token-de-teste
+MONGODB_URI=mongodb://localhost:27017
+MONGODB_DEMO_DB_NAME=facell_vendas_db_demo
+DEMO_ALLOW_DESTRUCTIVE_SYNC=I_UNDERSTAND
+```
+
+Execute apenas com uma data permitida pelo manual (no máximo ontem e em um intervalo de até 15 dias):
+
+```powershell
+npm run demo:erro -- 2026-10-10
+```
+
+O arquivo [src/Upsert.js](./src/Upsert.js) apresenta a versão corrigida, alinhada aos parâmetros e nomes de campos descritos no manual. Ele não apaga registros diante de resposta vazia e usa upsert para inserir ou atualizar vendas. No caso vazio, o script registra um aviso; o agendamento de nova tentativa e o controle persistente de estado ainda são responsabilidades a implementar em uma execução de produção.
+
+Instale as dependências:
+
+```powershell
+npm install
+```
+
+Copie `.env.example` para `.env` e configure o token fornecido pela CSJ. Não compartilhe nem envie `.env` ao Git. Exemplo de consulta diária (ajuste a data para o dia desejado; `DataInicial` precisa ser no máximo ontem na data da consulta):
+
+```powershell
+npm start -- 2026-10-10
+```
+
+Para consultar um intervalo:
+
+```powershell
+npm start -- 2026-10-01 2026-10-10
+```
+
+As datas precisam ser válidas, `DataFinal` não pode preceder `DataInicial`, e o período inclusivo não pode ultrapassar 15 dias. O token real, a disponibilidade do MongoDB e a chave única adequada devem ser confirmados antes de executar com dados reais.

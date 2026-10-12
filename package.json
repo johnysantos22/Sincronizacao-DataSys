@@ -1,0 +1,27 @@
+{
+  "name": "sincronizacao-datasys",
+  "version": "1.0.0",
+  "description": "Material de apoio para apresentar uma estratégia segura de sincronização das vendas retornadas pela API do DataSys.",
+  "main": "src/Upsert.js",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/Upsert.js",
+    "dev": "node --watch --env-file-if-exists=.env src/Upsert.js",
+    "demo:erro": "node --env-file-if-exists=.env src/Atual.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnysantos22/Sincronizacao-DataSys.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/johnysantos22/Sincronizacao-DataSys/issues"
+  },
+  "homepage": "https://github.com/johnysantos22/Sincronizacao-DataSys#readme",
+  "dependencies": {
+    "mongodb": "^7.7.0",
+    "soap": "^1.13.3"
+  }
+}
